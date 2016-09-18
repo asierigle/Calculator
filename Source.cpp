@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <iostream>
-#include <Windows.h>
 #include <math.h>
 
 using namespace std;
@@ -40,7 +39,15 @@ int main(int argc, char** argv) {
 				goto stop;
 			}
 		case 2:
-
+			cout << "insert 2 numbers for the substraction:\n" \
+				<< "first number: ";
+			cin >> a;
+			cout << "second number: ";
+			cin >> b;
+			cout << endl;
+			a -= b;
+			cout << "the result of the operation is: " << a << endl;
+			break;
 		default:
 			goto stop;
 		}
