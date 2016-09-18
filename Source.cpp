@@ -1,12 +1,25 @@
 #include <stdlib.h>
 #include <iostream>
 #include <math.h>
+#include <cmath>
 
 using namespace std;
 
+bool Integer(float d)
+{
+	if (d == (int)d) return true;
+	return false;
+}
+
+bool IsFloat(float a) {
+	if (a == (float)a) return true;
+	return false;
+}
+
 int main(int argc, char** argv) {
 	float a, b;
-	int c, d, e;
+	int c, d, e, f;
+	double g;
 	cout << "WELCOME TO MY CALCULATOR" << endl;
 	cout << "---------------------------" << endl;
 	stop:
@@ -29,7 +42,7 @@ int main(int argc, char** argv) {
 			cout << "second number: ";
 			cin >> b;
 			cout << endl;
-			if (a > 0 || a < 0) {
+			if (a >= 0 || a < 0) {
 				a += b;
 				cout << "the result of the operation is: " << a << endl;
 				break;
@@ -38,6 +51,7 @@ int main(int argc, char** argv) {
 				cout << "FATAL ERROR" << endl;
 				goto stop;
 			}
+
 		case 2:
 			cout << "insert 2 numbers for the substraction:\n" \
 				<< "first number: ";
@@ -48,12 +62,61 @@ int main(int argc, char** argv) {
 			a -= b;
 			cout << "the result of the operation is: " << a << endl;
 			break;
+
+		case 3:
+			cout << "insert 2 numbers for the multiplication:\n" \
+				<< "first number: ";
+			cin >> a;
+			cout << "second number: ";
+			cin >> b;
+			cout << endl;
+			a = a * b;
+			cout << "the result of the operation is: " << a << endl;
+			break;
+
+		case 4:
+			cout << "insert 2 numbers for the division:\n" \
+				<< "first number: ";
+			cin >> a;
+			cout << "second number: ";
+			cin >> b;
+			cout << endl;
+			a = a / b;
+			cout << "the result of the operation is: " << a << endl;
+			break;
+
+		case 5:
+			cout << "insert 2 numbers for the module of the division:\n" \
+				<< "first number: ";
+			cin >> d;
+			cout << "second number: ";
+			cin >> e;
+			cout << endl;
+			//if (Integer(d) == 0 && Integer(e) == 0) {
+				f = d % e;
+				cout << "the result of the operation is: " << f << endl;
+				break;
+			//}
+			/*else {
+				cout << "FATAL ERROR" << endl;
+				break;
+			}*/
+
+		case 6:
+			cout << "insert a number to raise 2 with that number:\n" \
+				<< "your number: ";
+			cin >> d;
+			cout << endl;
+			g = pow(2.0, d);
+			cout << "the result of the operation is: " << g << endl;
+			break;
 		default:
 			goto stop;
 		}
 	}
 	else {
-		cout << "FATAL ERROR" << endl;
+		cout << "FATAL ERROR\n" << endl;
+		goto stop;
 	}
 
 
