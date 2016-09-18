@@ -35,6 +35,7 @@ int main(int argc, char** argv) {
 	if (0 < c && c < 7) {
 		switch (c)
 		{
+
 		case 1:
 			cout << "insert 2 numbers for the addition:\n" \
 				<< "first number: ";
